@@ -19,14 +19,20 @@ package it.infn.ba.deep.qcg.client.model;
 import java.io.Serializable;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 /**
  * monitoring - currenlty not supported
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@ToString
+@Builder
+@AllArgsConstructor
 public class JobDescriptionMonitoring implements Serializable {
 
 	/**

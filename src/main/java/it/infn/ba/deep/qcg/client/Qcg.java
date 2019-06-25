@@ -16,38 +16,36 @@
 
 package it.infn.ba.deep.qcg.client;
 
-
-//import java.util.Collection;
-
 import feign.RequestLine;
 import feign.Param;
-//import feign.Body;
 import feign.Headers;
 
 import it.infn.ba.deep.qcg.client.model.Job;
+import it.infn.ba.deep.qcg.client.model.JobCollection;
+//import it.infn.ba.deep.qcg.client.model.JobCollection;
 import it.infn.ba.deep.qcg.client.model.JobDescription;
-//import it.infn.ba.deep.qcg.client.model.Resources;
+import it.infn.ba.deep.qcg.client.model.Resources;
+//import it.infn.ba.deep.qcg.client.model.JobDescriptionResources;
 import it.infn.ba.deep.qcg.client.utils.QcgException;
 
 public interface Qcg {
+	
+	
+  @RequestLine("GET /jobs  ")
+  JobCollection getJobs();
 
-  //@RequestLine("GET /jobs")
-  //Collection<Job> getJobs();
+  @RequestLine("GET /jobs?page={page}&page_size={page_size}")
+  JobCollection getJobs(@Param("page") int page, @Param("page_size") int page_size);
 
   @RequestLine("GET /jobs/{id}")
   Job getJob(@Param("id") String id);
 
-  //@RequestLine("GET /resources")
-  //Resources getResources();
-
-  //@RequestLine("PUT /job/{id}")
-  //void startJob(@Param("id") String id) throws QcgException;
+  @RequestLine("GET /resources")
+  Resources getResources();
 
   @Headers("Content-Type: application/json")
   @RequestLine("POST /jobs/")
-  //@Body("{job}")
   Job createJob(JobDescription job) throws QcgException;  
-  //Job createJob(@Param("job") Job job) throws QcgException;  
   
   @RequestLine("DELETE /jobs/{id}")
   void deleteJob(@Param("id") String id) throws QcgException;

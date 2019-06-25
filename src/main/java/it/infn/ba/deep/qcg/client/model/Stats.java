@@ -35,47 +35,25 @@ import lombok.ToString;
 @ToString
 @Builder
 @AllArgsConstructor
-public class JobDescription implements Serializable {/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5213288427407469718L;
-	
-	/**
-	 * short description
-	 */
-	private String note;
-	
-	/**
-	 * schema name to use
-	 */
-	private String schema;
+public class Stats implements Serializable {
+    
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 2024856820137521498L;
+    
+    /**
+     * 
+     */
+    private Map<String,Integer> total;
 
-	/**
-	 * execution specification
-	 */
-	private JobDescriptionExecution execution;
-	
-	/**
-	 * resource requirements
-	 */
-	private JobDescriptionResources resources;
-	
-	/**
-	 * monitoring - currently not supported
-	 */
-	private JobDescriptionMonitoring monitoring;
-
-	/**
-	 * dictionary with job attributes
-	 */
-	private Map<String,String> attributes; 
-
-	
-	public JobDescription() {
-		execution = null;
-		resources = null;
-		monitoring = null;
-		attributes = null;
-	}
-	
+    /**
+     * 
+     */
+    private Map<String,Integer> states;
+    
+    public Stats() {
+        total = null;
+        states = null;
+    }
 }

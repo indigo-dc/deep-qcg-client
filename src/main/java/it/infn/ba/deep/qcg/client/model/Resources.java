@@ -17,6 +17,7 @@
 package it.infn.ba.deep.qcg.client.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Map;
 
 import lombok.AllArgsConstructor;
@@ -35,47 +36,35 @@ import lombok.ToString;
 @ToString
 @Builder
 @AllArgsConstructor
-public class JobDescription implements Serializable {/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5213288427407469718L;
-	
-	/**
-	 * short description
-	 */
-	private String note;
-	
-	/**
-	 * schema name to use
-	 */
-	private String schema;
-
-	/**
-	 * execution specification
-	 */
-	private JobDescriptionExecution execution;
-	
-	/**
-	 * resource requirements
-	 */
-	private JobDescriptionResources resources;
-	
-	/**
-	 * monitoring - currently not supported
-	 */
-	private JobDescriptionMonitoring monitoring;
-
-	/**
-	 * dictionary with job attributes
-	 */
-	private Map<String,String> attributes; 
-
-	
-	public JobDescription() {
-		execution = null;
-		resources = null;
-		monitoring = null;
-		attributes = null;
-	}
-	
+public class Resources implements Serializable {
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -9162969458287470628L;
+    
+    /**
+     * 
+     */
+    private String date;
+    
+    /**
+     * 
+     */
+    private List<Node> nodes;
+    
+    /**
+     * 
+     */
+    private List<Queue> queues;
+    
+    /**
+     * 
+     */
+    private Map<String,String> config;
+    
+    public Resources() {
+        nodes = null;
+        queues = null;
+        config = null;
+    }
 }

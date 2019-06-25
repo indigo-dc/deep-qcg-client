@@ -16,14 +16,25 @@
 
 package it.infn.ba.deep.qcg.client.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.Map;
 
+/**
+ * 
+ * @author michele
+ *
+ */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@ToString
+@Builder
+@AllArgsConstructor
 public class Job implements Serializable {
 
   private static final long serialVersionUID = 4299892262923776798L;

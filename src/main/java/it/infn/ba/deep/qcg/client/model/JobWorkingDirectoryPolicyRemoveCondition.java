@@ -18,14 +18,20 @@ package it.infn.ba.deep.qcg.client.model;
 
 import java.io.Serializable;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 /**
  * detail specification of creating and removing working directory
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@ToString
+@Builder
+@AllArgsConstructor
 public class JobWorkingDirectoryPolicyRemoveCondition implements Serializable {
 
 	/**

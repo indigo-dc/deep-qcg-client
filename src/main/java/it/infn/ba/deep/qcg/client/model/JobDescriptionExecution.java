@@ -20,11 +20,22 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
+/**
+ * 
+ * @author michele
+ *
+ */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@ToString
+@Builder
+@AllArgsConstructor
 public class JobDescriptionExecution implements Serializable {
 
 	/**

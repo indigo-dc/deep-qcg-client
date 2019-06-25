@@ -17,12 +17,12 @@
 package it.infn.ba.deep.qcg.client.model;
 
 import java.io.Serializable;
-import java.util.Map;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
@@ -35,47 +35,28 @@ import lombok.ToString;
 @ToString
 @Builder
 @AllArgsConstructor
-public class JobDescription implements Serializable {/**
+@NoArgsConstructor
+public class SystemDowntime implements Serializable{/**
 	 * 
 	 */
-	private static final long serialVersionUID = -5213288427407469718L;
-	
-	/**
-	 * short description
-	 */
-	private String note;
-	
-	/**
-	 * schema name to use
-	 */
-	private String schema;
+	private static final long serialVersionUID = -259762864171759562L;
 
 	/**
-	 * execution specification
+	 * message for the users
 	 */
-	private JobDescriptionExecution execution;
+	private String user_message;	
 	
 	/**
-	 * resource requirements
+	 * message for the administrators
 	 */
-	private JobDescriptionResources resources;
-	
-	/**
-	 * monitoring - currently not supported
-	 */
-	private JobDescriptionMonitoring monitoring;
+	private String admin_message;
 
 	/**
-	 * dictionary with job attributes
+	 *  estimated downtime change
+	 *  Retry period 
+	 *  maximum: 2147483647
+	 *  minimum: -2147483648
 	 */
-	private Map<String,String> attributes; 
-
-	
-	public JobDescription() {
-		execution = null;
-		resources = null;
-		monitoring = null;
-		attributes = null;
-	}
+	private Integer retry_period;
 	
 }

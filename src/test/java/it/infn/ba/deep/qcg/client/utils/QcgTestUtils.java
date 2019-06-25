@@ -1,17 +1,38 @@
+/*
+ * Copyright © 2019 I.N.F.N.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package it.infn.ba.deep.qcg.client.utils;
 
-//import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import it.infn.ba.deep.qcg.client.model.Job;
 import it.infn.ba.deep.qcg.client.model.JobDescription;
 import it.infn.ba.deep.qcg.client.model.JobDescriptionExecution;
+import it.infn.ba.deep.qcg.client.model.JobDescriptionMonitoring;
+import it.infn.ba.deep.qcg.client.model.JobDescriptionMonitoringEntry;
 import it.infn.ba.deep.qcg.client.model.JobDescriptionResources;
 import it.infn.ba.deep.qcg.client.model.JobDescriptionResourcesComponent;
 import it.infn.ba.deep.qcg.client.model.JobWorkingDirectoryPolicy;
 import it.infn.ba.deep.qcg.client.model.JobWorkingDirectoryPolicyRemoveCondition;
+import it.infn.ba.deep.qcg.client.model.MonitoringScheme;
+import it.infn.ba.deep.qcg.client.model.MonitoringWhen;
 import it.infn.ba.deep.qcg.client.model.RemoveConditionCreateMode;
 import it.infn.ba.deep.qcg.client.model.RemoveConditionJobStatus;
 import it.infn.ba.deep.qcg.client.model.RemoveConditionOrigin;
@@ -23,7 +44,9 @@ public class QcgTestUtils {
 		Job job = new Job();
 		
 	    job.setId(id);
-	    job.setAttributes(new HashMap<String,String>());
+        Map<String,String> attributes = new HashMap<String,String>();
+        attributes.put("k", "v");
+        job.setAttributes(attributes);	    
 	    job.setUser("default-user");
 	    job.setState("FINISHED");
 	    job.setNote("3c915645-5402-471c-b9c6-dcc84a114ae6");
@@ -83,9 +106,19 @@ public class QcgTestUtils {
 		resources.setWall_clock(1.0);
 		resources.setQueue("normal");
 		jd.setResources(resources);
-		jd.setMonitoring(null);
+        JobDescriptionMonitoring monitoring = new JobDescriptionMonitoring();
+        JobDescriptionMonitoringEntry E = new JobDescriptionMonitoringEntry(
+                MonitoringScheme.http,
+                "127.0.0.1",
+                MonitoringWhen.ALWAYS);
+        List<JobDescriptionMonitoringEntry> notify = new ArrayList<JobDescriptionMonitoringEntry>();
+        notify.add(E);
+        monitoring.setNotify(notify);        
+		jd.setMonitoring(monitoring);
+        Map<String,String> attributes = new HashMap<String,String>();
+        attributes.put("k1", "v1");
+        jd.setAttributes(attributes);
 		
 		return jd;
 	}
-//{"id":"60","attributes":{},"user":"default-user","state":"FINISHED","operation":null,"note":"3c915645-5402-471c-b9c6-dcc84a114ae6","description":{"note":"3c915645-5402-471c-b9c6-dcc84a114ae6","execution":{"directory":"/qcg/${QCGNCOMP_JOB_ID}","executable":"/usr/bin/date","environment":{"USER":"slurm_user","QCGNCOMP_JOB_ID":"60","QCGNCOMP_JOB_SECRET_AUTH":"0a05ef399fc54112abae2b9b1eb4bff8"},"directory_policy":{"create":"OVERWRITE","remove":"NEVER"}}},"operation_start":null,"resource":null,"queue":"normal","local_user":"slurm_user","local_group":null,"local_id":"53","submit_time":"2019-06-07T12:55:23.912772Z","start_time":"2019-06-07T12:55:25Z","finish_time":"2019-06-07T12:55:25Z","updated_time":"2019-06-07T12:55:29.468312Z","eta":null,"nodes":"c1","cpus":1,"exit_code":0,"errors":null,"resubmit":1,"work_dir":"/qcg/60","created_work_dir":true,"last_seen":"2019-06-07T12:55:29.466927Z"}
 }

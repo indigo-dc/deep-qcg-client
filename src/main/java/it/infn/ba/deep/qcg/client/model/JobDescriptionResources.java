@@ -19,11 +19,22 @@ package it.infn.ba.deep.qcg.client.model;
 import java.io.Serializable;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
+/**
+ * 
+ * @author michele
+ *
+ */
 @Data
 @EqualsAndHashCode(callSuper = false)
+@ToString
+@Builder
+@AllArgsConstructor
 public class JobDescriptionResources implements Serializable  {
 
 	/**
@@ -32,12 +43,15 @@ public class JobDescriptionResources implements Serializable  {
 	private static final long serialVersionUID = 1271239842338801274L;
 
 	
+	/**
+	 * 
+	 */
 	private List<JobDescriptionResourcesComponent> components;
 	
 	/**
 	 * maximum total execution time
 	 */
-	Double wall_clock;
+	private Double wall_clock;
 
 	/**
 	 * queue/partition name

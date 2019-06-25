@@ -27,19 +27,16 @@ import static java.lang.String.format;
 import feign.RequestTemplate;
 import feign.codec.EncodeException;
 import feign.codec.Encoder;
-import it.infn.ba.deep.qcg.client.model.Job;
-import it.infn.ba.deep.qcg.client.model.JobDescription;
 
 public class QcgEncoder implements Encoder {
 
 	@Override
 	public void encode(Object object, Type bodyType, RequestTemplate template) {
-		if (bodyType == String.class) {
+		if (String.class.equals(bodyType)) {
 		    template.body(object.toString());
-		} else if (bodyType == byte[].class) {
+		} else if ( byte[].class.equals(bodyType)) {
 		    template.body((byte[]) object, null);
-		} else if ( bodyType == JobDescription.class ||				
-					bodyType == Job.class) {
+		} else if ( object != null) {
 			String serialized = null;
 		    try {
 		    	ObjectMapper mapper = new ObjectMapper();
@@ -50,10 +47,7 @@ public class QcgEncoder implements Encoder {
 				throw new EncodeException(
 						format("Error %s serializing %s.", e.getMessage(), object.getClass()));
 			}	    		    
-		} else if (object != null) {
-		    throw new EncodeException(
-		        format("%s is not a type supported by this encoder.", object.getClass()));
-		}
+		} 
 	}
 
 }

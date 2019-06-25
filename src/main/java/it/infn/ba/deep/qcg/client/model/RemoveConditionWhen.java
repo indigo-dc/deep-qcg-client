@@ -16,6 +16,11 @@
 
 package it.infn.ba.deep.qcg.client.model;
 
+/**
+ * 
+ * @author michele
+ *
+ */
 public enum RemoveConditionWhen {
 	ALWAYS, NEVER, FINISHED_OWNED, CUSTOM
 }
