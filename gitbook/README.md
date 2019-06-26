@@ -8,9 +8,9 @@ Add deep-qcg-client as a dependency:
 
 ```
 <dependency>
-  <groupId>com.mesosphere</groupId>
+  <groupId>xxxx</groupId>
   <artifactId>deep.qcg-client</artifactId>
-  <version>0.0.1</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 
