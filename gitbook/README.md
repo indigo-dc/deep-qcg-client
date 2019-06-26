@@ -92,7 +92,7 @@ qcg.deleteJob("id");
 The following example demonstrates how one can retrieve the list of system resources:
 
 ```
-qcg.getResources();
+Resources resources = qcg.getResources();
 ```
 
 ## Building
