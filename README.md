@@ -45,7 +45,7 @@ JobCollection jobs  = qcg.getJobs();
 
 ### Getting paginated list of jobs
 
-The following will return a paged list of jobs that have been created:
+The following will return a paginated list of jobs that have been created:
 
 ```
 JobCollection jobs  = qcg.getJobs(pagenumber, pagesize);
@@ -72,7 +72,7 @@ qcg.createJob(jd);
 
 ### Get details about an existing job
 
-The following example, demostrates how to get details about an already created job:
+The following example demonstrates how to get details about an already created job:
 
 ```
 Job job = qcg.getJob("id");
@@ -80,10 +80,19 @@ Job job = qcg.getJob("id");
 
 ### Delete a job
 
-The following example demostrate, how one can delete an existing application:
+The following example demonstrates how one can delete an existing application:
 
 ```
 qcg.deleteJob("id");
+```
+
+
+### Get list of resources
+
+The following example demonstrates how one can retrieve the list of system resources:
+
+```
+qcg.getResources();
 ```
 
 ## Building
