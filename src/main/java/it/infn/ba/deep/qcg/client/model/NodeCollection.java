@@ -18,6 +18,7 @@ package it.infn.ba.deep.qcg.client.model;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -45,7 +46,7 @@ public class NodeCollection  implements Serializable {
     /**
      * 
      */
-    private List<Node> list;
+    private List<Map<String,Node>> list;
     
     /**
      * 

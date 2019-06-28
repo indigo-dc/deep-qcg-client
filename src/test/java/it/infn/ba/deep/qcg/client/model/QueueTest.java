@@ -25,7 +25,6 @@ public class QueueTest {
     public void test() {
         
         Queue Q1 = new Queue();
-        Q1.setName("Q");
         Q1.setDefault(true);
         Q1.setDef_walltime("def_walltime");
         Q1.setMax_time("max_time");
@@ -36,7 +35,6 @@ public class QueueTest {
         Q1.setState("ok");
         Q1.setCpus(16);
 
-        assertTrue(Q1.getName().equals("Q"));
         assertTrue(Q1.isDefault()==true);
         assertTrue(Q1.getDef_walltime().equals("def_walltime"));
         assertTrue(Q1.getMax_time().equals("max_time"));
@@ -49,8 +47,7 @@ public class QueueTest {
         
         Q1.toString();
 
-        Queue Q2 = new Queue("Q",
-                             true,
+        Queue Q2 = new Queue(true,
                              "def_walltime",
                              "max_time",
                              1,
@@ -60,7 +57,6 @@ public class QueueTest {
                              "ok",
                              16);
         
-        assertTrue(Q2.getName().equals("Q"));
         assertTrue(Q2.isDefault()==true);
         assertTrue(Q2.getDef_walltime().equals("def_walltime"));
         assertTrue(Q2.getMax_time().equals("max_time"));

@@ -17,7 +17,6 @@
 package it.infn.ba.deep.qcg.client.model;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Map;
 
 import lombok.AllArgsConstructor;
@@ -50,18 +49,21 @@ public class Resources implements Serializable {
     /**
      * 
      */
-    private List<Node> nodes;
+    private NodeCollection nodes;
     
     /**
      * 
      */
-    private List<Queue> queues;
+    private QueueCollection queues;
     
     /**
      * 
      */
     private Map<String,String> config;
     
+    /**
+     * 
+     */
     public Resources() {
         nodes = null;
         queues = null;

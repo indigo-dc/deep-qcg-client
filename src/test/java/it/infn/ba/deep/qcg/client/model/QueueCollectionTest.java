@@ -20,7 +20,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class QueueCollectionTest {
     
@@ -33,18 +35,31 @@ public class QueueCollectionTest {
         assertTrue(Q.getList()==null);        
         assertTrue(Q.getJob_stats()==null);
 
-        QueueCollection Q1 = new QueueCollection();
+        QueueCollection C1 = new QueueCollection();
         
-        List<Queue> list = new ArrayList<Queue>();
+        Map<String, Queue> queues = new HashMap<String,Queue>();
+        Queue Q1 = new Queue();
+        Q1.setDefault(true);
+        Q1.setDef_walltime("def_walltime");
+        Q1.setMax_time("max_time");
+        Q1.setMin_nodes(1);
+        Q1.setMax_nodes(999);
+        Q1.setNodes(5);
+        Q1.setPriority(10);
+        Q1.setState("ok");
+        Q1.setCpus(16);
+        queues.put("Q1", Q1);
+        List<Map<String, Queue>> list = new ArrayList<Map<String, Queue>>();
+        list.add(queues);
         Stats job_stats = new Stats();
-        Q1.setList(list);
-        Q1.setJob_stats(job_stats);
+        C1.setList(list);
+        C1.setJob_stats(job_stats);
         
-        assertTrue(Q1.getList().equals(list));
-        assertTrue(Q1.getJob_stats().equals(job_stats));
+        assertTrue(C1.getList().equals(list));
+        assertTrue(C1.getList().get(0).get("Q1").equals(Q1));        
+        assertTrue(C1.getJob_stats().equals(job_stats));
         
-        Q1.toString();
-        
+        C1.toString();        
         
         QueueCollection Q2 = new QueueCollection(list,
                                                job_stats);

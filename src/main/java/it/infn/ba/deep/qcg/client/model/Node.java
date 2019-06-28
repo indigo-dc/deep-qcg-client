@@ -46,11 +46,6 @@ public class Node  implements Serializable {
     /**
      * 
      */
-    private String name;
-    
-    /**
-     * 
-     */
     private int cpus;
     
     /**

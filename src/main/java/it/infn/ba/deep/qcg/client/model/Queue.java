@@ -43,10 +43,6 @@ public class Queue implements Serializable {
      */
     private static final long serialVersionUID = 6304401769227410718L;
 
-    /**
-     * 
-     */
-    private String name;
     
     /**
      * 

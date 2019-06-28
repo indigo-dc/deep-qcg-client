@@ -20,7 +20,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class NodeCollectionTest {
     
@@ -35,12 +37,23 @@ public class NodeCollectionTest {
 
         NodeCollection C1 = new NodeCollection();
         
-        List<Node> list = new ArrayList<Node>();
+        Map<String,Node> nodes = new HashMap<String,Node>();
+        Node N1 = new Node();
+        N1.setCpus(4);
+        N1.setHost("localhost");
+        N1.setMemory(1024);
+        N1.setMemory_alloc(512);
+        N1.setState("state");
+        N1.setQueues("queues");
+        nodes.put("N1", N1);
+        List<Map<String,Node>> list = new ArrayList<Map<String,Node>>();
+        list.add(nodes);
         Stats node_stats = new Stats();
         C1.setList(list);
         C1.setNode_stats(node_stats);
         
         assertTrue(C1.getList().equals(list));
+        assertTrue(C1.getList().get(0).get("N1").equals(N1));
         assertTrue(C1.getNode_stats().equals(node_stats));
         
         C1.toString();

@@ -18,9 +18,7 @@ package it.infn.ba.deep.qcg.client.model;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
@@ -40,8 +38,8 @@ public class ResourcesTest {
         
         Resources R1 = new Resources();
         R1.setDate("date");
-        List<Node> nodes = new ArrayList<Node>();
-        List<Queue> queues = new ArrayList<Queue>();
+        NodeCollection nodes = new NodeCollection();
+        QueueCollection queues = new QueueCollection();
         Map<String,String> config = new HashMap<String,String>();
         config.put("k", "v");
         R1.setNodes(nodes);

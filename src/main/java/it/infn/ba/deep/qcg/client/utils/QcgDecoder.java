@@ -19,6 +19,7 @@ package it.infn.ba.deep.qcg.client.utils;
 import java.io.IOException;
 import java.lang.reflect.Type;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -43,6 +44,7 @@ public class QcgDecoder implements Decoder {
 	    
 		ObjectMapper mapper = new ObjectMapper();
 	    JavaType t = mapper.getTypeFactory().constructType(type);
+	    mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);	    
 		return mapper.readValue(Util.toString(response.body().asReader()), t);
 	}
 

@@ -25,7 +25,6 @@ public class NodeTest {
     public void test() {
         
         Node N1 = new Node();
-        N1.setName("name");
         N1.setCpus(4);
         N1.setHost("localhost");
         N1.setMemory(1024);
@@ -33,7 +32,6 @@ public class NodeTest {
         N1.setState("state");
         N1.setQueues("queues");
         
-        assertTrue(N1.getName().equals("name"));
         assertTrue(N1.getCpus()==4);
         assertTrue(N1.getHost().equals("localhost"));
         assertTrue(N1.getMemory()==1024);
@@ -43,15 +41,13 @@ public class NodeTest {
         
         N1.toString();
         
-        Node N2 = new Node("name",
-                           4,
+        Node N2 = new Node(4,
                            "localhost",
                            1024,
                            512,
                            "state",
                            "queues");
 
-        assertTrue(N2.getName().equals("name"));
         assertTrue(N2.getCpus()==4);
         assertTrue(N2.getHost().equals("localhost"));
         assertTrue(N2.getMemory()==1024);
