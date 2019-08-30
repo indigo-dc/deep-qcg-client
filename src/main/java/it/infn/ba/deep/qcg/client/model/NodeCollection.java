@@ -28,7 +28,7 @@ import lombok.ToString;
 
 /**
  * 
- * @author michele
+ * @author Michel Perniola
  *
  */
 @Data

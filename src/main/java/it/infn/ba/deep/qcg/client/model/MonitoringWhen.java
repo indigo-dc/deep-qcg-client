@@ -18,7 +18,7 @@ package it.infn.ba.deep.qcg.client.model;
 
 /**
  * 
- * @author michele
+ * @author Michele Perniola
  *
  */
 public enum MonitoringWhen {
