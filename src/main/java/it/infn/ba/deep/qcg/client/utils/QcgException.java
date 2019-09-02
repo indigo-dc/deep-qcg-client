@@ -16,7 +16,7 @@
 
 package it.infn.ba.deep.qcg.client.utils;
 
-public class QcgException extends Exception {
+public class QcgException extends RuntimeException {
   private static final long serialVersionUID = 1L;
   private int status;
   private String message;
