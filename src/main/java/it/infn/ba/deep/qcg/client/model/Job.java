@@ -27,7 +27,7 @@ import java.util.Map;
 
 /**
  * 
- * @author michele
+ * @author Michele Perniola
  *
  */
 @Data
