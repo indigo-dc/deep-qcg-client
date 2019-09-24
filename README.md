@@ -10,7 +10,7 @@ Add deep-qcg-client as a dependency:
 <dependency>
   <groupId>xxxx</groupId>
   <artifactId>deep.qcg-client</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
