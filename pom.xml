@@ -4,7 +4,7 @@
 
   <groupId>it.infn.ba.deep</groupId>
   <artifactId>deep-qcg-client</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
   <name>deep-qcg-client</name>
   <description>A Java API client for QCG.</description>
@@ -16,7 +16,7 @@
 		<gson-version>2.5</gson-version>
 		<junit-version>4.12</junit-version>
         <lombok.version>1.16.20</lombok.version>
-        <jackson-databind.version>2.9.9.3</jackson-databind.version>
+        <jackson-databind.version>2.9.10</jackson-databind.version>
 		<assertj.version>3.11.1</assertj.version>
 		
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -198,8 +198,8 @@
 	
 	<distributionManagement>
 	    <repository>
-	        <id>central</id>
-	        <name>artifactory-releases</name>
+	        <id>recas-cloud-artifactory</id>
+	        <name>recas-cloud-artifactory-releases</name>
 	        <url>http://artifactory.cloud.ba.infn.it:8081/artifactory/libs-release</url>
 	    </repository>
 	</distributionManagement>
