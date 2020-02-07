@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 I.N.F.N.
+ * Copyright © 2019-2020 I.N.F.N.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,13 @@ public class Stats implements Serializable {
     /**
      * 
      */
-    private Map<String,Integer> states;
+    private Map<String, Map<String,Integer>> states;
+    
+    /**
+     * 
+     */
+    private String earliest_submit;
+    
     
     public Stats() {
         total = null;

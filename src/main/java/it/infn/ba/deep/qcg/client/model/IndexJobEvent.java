@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 I.N.F.N.
+ * Copyright © 2019-2020 I.N.F.N.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,11 +129,6 @@ public class IndexJobEvent implements Serializable {
 	   * name of nodes job is executing on
 	   */
 	  private String nodes;
-	  
-	  /**
-	   * total number of used CPUs
-	   */
-	  private Integer cpus;
 	  
 	  /**
 	   * application exit code

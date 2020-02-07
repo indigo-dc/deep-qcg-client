@@ -48,7 +48,13 @@ public class NodeCollectionTest {
         nodes.put("N1", N1);
         List<Map<String,Node>> list = new ArrayList<Map<String,Node>>();
         list.add(nodes);
-        Stats node_stats = new Stats();
+        NodeStats node_stats = new NodeStats();
+        Map<String,Integer> total = new HashMap<String,Integer>();
+        total.put("nodes", 1);       
+        Map<String,Integer> states = new HashMap<String,Integer>();
+        states.put("RUNNING", 1);   
+        node_stats.setTotal(total);
+        node_stats.setStates(states);
         C1.setList(list);
         C1.setNode_stats(node_stats);
         

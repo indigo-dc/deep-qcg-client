@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 I.N.F.N.
+ * Copyright © 2019-2020 I.N.F.N.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 package it.infn.ba.deep.qcg.client.model;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Map;
 
 import lombok.AllArgsConstructor;
@@ -28,7 +27,7 @@ import lombok.ToString;
 
 /**
  * 
- * @author Michel Perniola
+ * @author Michele Perniola
  *
  */
 @Data
@@ -36,28 +35,25 @@ import lombok.ToString;
 @ToString
 @Builder
 @AllArgsConstructor
-public class NodeCollection  implements Serializable {
+public class NodeStats implements Serializable {
     
     /**
      * 
      */
-    private static final long serialVersionUID = -832336246068806914L;
+    private static final long serialVersionUID = -1L;
+    
+    /**
+     * 
+     */
+    private Map<String,Integer> total;
 
     /**
      * 
      */
-    private List<Map<String,Node>> list;
+    private Map<String,Integer> states;
     
-    /**
-     * 
-     */
-    private NodeStats node_stats;
-    
-    /**
-     * 
-     */
-    public NodeCollection() {
-        list = null;
-        node_stats = null;
+    public NodeStats() {
+        total = null;
+        states = null;
     }
 }
