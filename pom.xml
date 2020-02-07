@@ -196,12 +196,4 @@
 		<name>INFN</name>
 	</organization>
 	
-	<distributionManagement>
-	    <repository>
-	        <id>recas-cloud-artifactory</id>
-	        <name>recas-cloud-artifactory-releases</name>
-	        <url>http://artifactory.cloud.ba.infn.it:8081/artifactory/libs-release</url>
-	    </repository>
-	</distributionManagement>
-		
 </project>
