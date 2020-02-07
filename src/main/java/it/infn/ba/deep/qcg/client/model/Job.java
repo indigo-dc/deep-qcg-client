@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 I.N.F.N.
+ * Copyright © 2019-2020 I.N.F.N.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,22 +43,27 @@ public class Job implements Serializable {
    * job identifier
    */
   private String id;
-  
+
   /**
    * job's attributes
    */
   private Map<String,String> attributes; 
-  
+
   /**
    * user's full name
    */
   private String user;
-  
+
+  /**
+   * current job type
+   */
+  private String type;
+
   /**
    * current job status
    */
   private String state;
-  
+
   /**
    * currently ongoing operation
    */
@@ -68,9 +73,14 @@ public class Job implements Serializable {
    * short's user's description
    */
   private String note;
-  
+
   /**
-   * 
+   * iteration identifier of an array job 
+   */
+  private String task_id;
+
+  /**
+   * formal description
    */
   private JobDescription description;
   
@@ -175,8 +185,12 @@ public class Job implements Serializable {
    * string($date-time)
    */
   private String last_seen;
-  
-  
+
+  /**
+   * parent job
+   */
+  private Integer parent_job;
+
   public Job() {
 	  attributes = null;
 	  description = null;

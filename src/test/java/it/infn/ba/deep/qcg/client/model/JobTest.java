@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 I.N.F.N.
+ * Copyright © 2019-2020 I.N.F.N.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,11 @@ public class JobTest {
         attributes.put("k", "v");
         J1.setAttributes(attributes);
         J1.setUser("user");
+        J1.setType("type");
         J1.setState("state");
         J1.setOperation("operation");
         J1.setNote("note");
+        J1.setTask_id("taskid");
         
         JobDescription description = QcgTestUtils.buildJobDescription("1");
         
@@ -73,13 +75,16 @@ public class JobTest {
         J1.setWork_dir("work_dir");
         J1.setCreated_work_dir(true);
         J1.setLast_seen("last_seen");
+        J1.setParent_job(2);
         
         assertTrue(J1.getId().equals("1"));
         assertTrue(J1.getAttributes().equals(attributes));
         assertTrue(J1.getUser().equals("user"));
+        assertTrue(J1.getType().equals("type"));
         assertTrue(J1.getState().equals("state"));
         assertTrue(J1.getOperation().equals("operation"));
         assertTrue(J1.getNote().equals("note"));
+        assertTrue(J1.getTask_id().equals("taskid"));
         assertTrue(J1.getDescription().equals(description));
         assertTrue(J1.getOperation_start().equals("operation_start"));
         assertTrue(J1.getResource().equals("resource"));
@@ -100,15 +105,18 @@ public class JobTest {
         assertTrue(J1.getWork_dir().equals("work_dir"));
         assertTrue(J1.getCreated_work_dir().equals(true));
         assertTrue(J1.getLast_seen().equals("last_seen"));
+        assertTrue(J1.getParent_job().equals(2));
         
         J1.toString();
         
         Job J2 = new Job("1",
                          attributes,
-                         "user",                         
+                         "user",  
+                         "type",
                          "state",
                          "operation",
                          "note",
+                         "taskid",
                          description,
                          "operation_start",
                          "resource",
@@ -128,14 +136,17 @@ public class JobTest {
                          1,
                          "work_dir",
                          true,
-                         "last_seen");
+                         "last_seen",
+                         2);
         
         assertTrue(J2.getId().equals("1"));
         assertTrue(J2.getAttributes().equals(attributes));
         assertTrue(J2.getUser().equals("user"));
+        assertTrue(J2.getType().equals("type"));
         assertTrue(J2.getState().equals("state"));
         assertTrue(J2.getOperation().equals("operation"));
         assertTrue(J2.getNote().equals("note"));
+        assertTrue(J2.getTask_id().equals("taskid"));
         assertTrue(J2.getDescription().equals(description));
         assertTrue(J2.getOperation_start().equals("operation_start"));
         assertTrue(J2.getResource().equals("resource"));
@@ -156,6 +167,7 @@ public class JobTest {
         assertTrue(J2.getWork_dir().equals("work_dir"));
         assertTrue(J2.getCreated_work_dir().equals(true));
         assertTrue(J2.getLast_seen().equals("last_seen"));
+        assertTrue(J2.getParent_job().equals(2));
         
     }
 

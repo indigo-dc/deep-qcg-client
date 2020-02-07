@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 I.N.F.N.
+ * Copyright © 2019-2020 I.N.F.N.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,12 @@
 package it.infn.ba.deep.qcg.client.model;
 
 import java.io.Serializable;
+import java.util.Map;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
@@ -35,7 +35,6 @@ import lombok.ToString;
 @ToString
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 public class Queue implements Serializable {
     
     /**
@@ -87,5 +86,23 @@ public class Queue implements Serializable {
     /**
      * 
      */
-    private int cpus;    
+    private int cpus;   
+    
+    /**
+     * 
+     */
+    private Map<String, Integer> jobs_total;
+    
+    /**
+     * 
+     */
+    private Map<String, Map<String,Integer>> job_states;
+    
+    /**
+     * 
+     */
+    public Queue() {
+    	jobs_total = null;
+    	job_states = null;
+    }
 }

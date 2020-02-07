@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 I.N.F.N.
+ * Copyright © 2019-2020 I.N.F.N.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,6 @@ public class IndexJobEventTest {
         I1.setUpdated_time("updated_time");
         I1.setEta("eta");
         I1.setNodes("nodes");
-        I1.setCpus(4);
         I1.setExit_code(401);
         I1.setErrors("errors");
         I1.setWork_dir("work_dir");
@@ -66,7 +65,6 @@ public class IndexJobEventTest {
         assertTrue(I1.getUpdated_time().equals("updated_time"));
         assertTrue(I1.getEta().equals("eta"));
         assertTrue(I1.getNodes().equals("nodes"));
-        assertTrue(I1.getCpus().equals(4));
         assertTrue(I1.getExit_code()==401);
         assertTrue(I1.getErrors().equals("errors"));
         assertTrue(I1.getWork_dir().equals("work_dir"));
@@ -90,7 +88,6 @@ public class IndexJobEventTest {
                                              "updated_time",
                                              "eta",
                                              "nodes",
-                                             4,
                                              401,
                                              "errors",
                                              "work_dir");
@@ -112,7 +109,6 @@ public class IndexJobEventTest {
         assertTrue(I2.getUpdated_time().equals("updated_time"));
         assertTrue(I2.getEta().equals("eta"));
         assertTrue(I2.getNodes().equals("nodes"));
-        assertTrue(I2.getCpus().equals(4));
         assertTrue(I2.getExit_code()==401);
         assertTrue(I2.getErrors().equals("errors"));
         assertTrue(I2.getWork_dir().equals("work_dir"));

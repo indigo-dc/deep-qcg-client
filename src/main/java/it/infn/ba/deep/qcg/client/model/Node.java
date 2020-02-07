@@ -51,7 +51,22 @@ public class Node  implements Serializable {
     /**
      * 
      */
+    private double load;
+    
+    /**
+     * 
+     */
+    private String gres;
+
+    /**
+     * 
+     */
     private String host;
+    
+    /**
+     * 
+     */
+    private String os;
     
     /**
      * 
@@ -66,10 +81,16 @@ public class Node  implements Serializable {
     /**
      * 
      */
+    private int memory_free;
+    
+    /**
+     * 
+     */
     private String state;
     
     /**
      * 
      */
     private String queues;
+    
 }

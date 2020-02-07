@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 I.N.F.N.
+ * Copyright © 2019-2020 I.N.F.N.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,10 +19,22 @@ package it.infn.ba.deep.qcg.client.model;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class QueueTest {
 
     @Test
     public void test() {
+        
+        
+        Map<String,Integer> jtotal = new HashMap<String,Integer>();
+        jtotal.put("jobs", 1);
+        
+        Map<String,Integer> running = new HashMap<String,Integer>();
+        running.put("jobs", 2);  
+        Map<String, Map<String,Integer>> jstates = new HashMap<String, Map<String,Integer>>();
+        jstates.put("RUNNING", running);
         
         Queue Q1 = new Queue();
         Q1.setDefault(true);
@@ -34,6 +46,8 @@ public class QueueTest {
         Q1.setPriority(10);
         Q1.setState("ok");
         Q1.setCpus(16);
+        Q1.setJobs_total(jtotal);
+        Q1.setJob_states(jstates);
 
         assertTrue(Q1.isDefault()==true);
         assertTrue(Q1.getDef_walltime().equals("def_walltime"));
@@ -44,6 +58,8 @@ public class QueueTest {
         assertTrue(Q1.getPriority()==10);
         assertTrue(Q1.getState().equals("ok"));
         assertTrue(Q1.getCpus()==16);
+        assertTrue(Q1.getJobs_total().equals(jtotal));
+        assertTrue(Q1.getJob_states().equals(jstates));
         
         Q1.toString();
 
@@ -55,7 +71,9 @@ public class QueueTest {
                              5,
                              10,
                              "ok",
-                             16);
+                             16,
+                             jtotal,
+                             jstates);
         
         assertTrue(Q2.isDefault()==true);
         assertTrue(Q2.getDef_walltime().equals("def_walltime"));
@@ -66,6 +84,8 @@ public class QueueTest {
         assertTrue(Q2.getPriority()==10);
         assertTrue(Q2.getState().equals("ok"));
         assertTrue(Q2.getCpus()==16);
+        assertTrue(Q2.getJobs_total().equals(jtotal));
+        assertTrue(Q2.getJob_states().equals(jstates));
                 
     }
 }
