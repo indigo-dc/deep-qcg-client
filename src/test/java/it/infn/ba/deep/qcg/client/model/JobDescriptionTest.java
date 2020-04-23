@@ -75,7 +75,7 @@ public class JobDescriptionTest {
         component.setMemory_per_core(8);
         component.setConsumable("nothing");
         resources.setComponents(Arrays.asList(new JobDescriptionResourcesComponent[]{component}));
-        resources.setWall_clock(1.0);
+        resources.setWall_clock("01:00:00");
         resources.setQueue("normal");
         D1.setResources(resources);
         JobDescriptionMonitoring monitoring = new JobDescriptionMonitoring();

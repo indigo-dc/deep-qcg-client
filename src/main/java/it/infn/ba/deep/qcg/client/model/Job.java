@@ -47,7 +47,7 @@ public class Job implements Serializable {
   /**
    * job's attributes
    */
-  private Map<String,String> attributes; 
+  private Map<String,String> attributes;
 
   /**
    * user's full name

@@ -17,7 +17,6 @@
 package it.infn.ba.deep.qcg.client.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,34 +34,25 @@ import lombok.ToString;
 @ToString
 @Builder
 @AllArgsConstructor
-public class JobDescriptionResources implements Serializable  {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1271239842338801274L;
-
+public class Downtime implements Serializable {
 	
 	/**
 	 * 
 	 */
-	private List<JobDescriptionResourcesComponent> components;
-	
-	/**
-	 * maximum total execution time
-	 * The representation is a string following this format '[DD] [HH:[MM:]]ss[.uuuuuu]'
-	 */
-	private String wall_clock;
+	private static final long serialVersionUID = 2362271326739041617L;
 
 	/**
-	 * queue/partition name
+	 * message for the users
 	 */
-	private String queue;
+	private String user_message;
 	
 	/**
-	 * list of resource requirements components
+	 * message for the administrators
 	 */
-	public JobDescriptionResources() {
-		components = null;
-	}
+	private String admin_message;
+
+	/**
+	 * estimated downtime change
+	 */
+	private Integer retry_period;
 }

@@ -35,34 +35,42 @@ import lombok.ToString;
 @ToString
 @Builder
 @AllArgsConstructor
-public class JobDescriptionResources implements Serializable  {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1271239842338801274L;
-
+public class Iteration implements Serializable {
 	
 	/**
 	 * 
 	 */
-	private List<JobDescriptionResourcesComponent> components;
-	
-	/**
-	 * maximum total execution time
-	 * The representation is a string following this format '[DD] [HH:[MM:]]ss[.uuuuuu]'
-	 */
-	private String wall_clock;
+	private static final long serialVersionUID = 6500385386229899898L;
 
 	/**
-	 * queue/partition name
+	 * start index
+	 * minimum: 0
 	 */
-	private String queue;
+	private Integer start;
 	
 	/**
-	 * list of resource requirements components
+	 * end index
+	 * minimum: 1
 	 */
-	public JobDescriptionResources() {
-		components = null;
+	private Integer stop;
+
+	/**
+	 * step between following indexes
+	 * minimum: 1
+	 */
+	private Integer step;
+	
+	/**
+	 * maximum number of simultaneously iterations
+	 * minimum: 1
+	 */
+
+	/**
+	 * set of defined indexes
+	 */
+	private List<Integer> indexes;
+
+	public Iteration() {
+		indexes = null;
 	}
 }

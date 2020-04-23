@@ -4,7 +4,7 @@
 
   <groupId>it.infn.ba.deep</groupId>
   <artifactId>deep-qcg-client</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
   <packaging>jar</packaging>
   <name>deep-qcg-client</name>
   <description>A Java API client for QCG.</description>

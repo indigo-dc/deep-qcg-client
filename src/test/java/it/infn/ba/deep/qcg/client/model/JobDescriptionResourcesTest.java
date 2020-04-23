@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 I.N.F.N.
+ * Copyright © 2019-2020 I.N.F.N.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,21 +52,21 @@ public class JobDescriptionResourcesTest {
         components.add(D1);
         
         R1.setComponents(components);
-        R1.setWall_clock(1.0);
+        R1.setWall_clock("01:00:00");
         R1.setQueue("queue");
         
         assertTrue(R1.getComponents().equals(components));
-        assertTrue(R1.getWall_clock()== 1.0);
+        assertTrue(R1.getWall_clock()== "01:00:00");
         assertTrue(R1.getQueue().equals("queue"));
         
         R1.toString();
         
         JobDescriptionResources R2 = new JobDescriptionResources(components,
-                                                                 1.0,
+                                                                 "01:00:00",
                                                                  "queue");
         
         assertTrue(R2.getComponents().equals(components));
-        assertTrue(R2.getWall_clock()== 1.0);
+        assertTrue(R2.getWall_clock()== "01:00:00");
         assertTrue(R2.getQueue().equals("queue"));
         
     }
