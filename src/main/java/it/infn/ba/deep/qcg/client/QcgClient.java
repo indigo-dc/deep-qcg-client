@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 I.N.F.N.
+ * Copyright © 2019-2020 I.N.F.N.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,7 @@ import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import feign.Response;
 import feign.codec.ErrorDecoder;
-//import feign.gson.GsonDecoder;
-//import feign.gson.GsonEncoder;
 import it.infn.ba.deep.qcg.client.utils.QcgException;
-//import it.infn.ba.deep.qcg.client.utils.ModelUtils;
 import it.infn.ba.deep.qcg.client.utils.QcgDecoder;
 import it.infn.ba.deep.qcg.client.utils.QcgEncoder;
 import it.infn.ba.deep.qcg.client.utils.TokenAuthRequestInterceptor;

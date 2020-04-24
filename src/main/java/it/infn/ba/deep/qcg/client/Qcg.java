@@ -1,5 +1,5 @@
 /*
- * Copyright © 2019 I.N.F.N.
+ * Copyright © 2019-2020 I.N.F.N.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,15 +22,12 @@ import feign.Headers;
 
 import it.infn.ba.deep.qcg.client.model.Job;
 import it.infn.ba.deep.qcg.client.model.JobCollection;
-//import it.infn.ba.deep.qcg.client.model.JobCollection;
 import it.infn.ba.deep.qcg.client.model.JobDescription;
 import it.infn.ba.deep.qcg.client.model.Resources;
-//import it.infn.ba.deep.qcg.client.model.JobDescriptionResources;
 import it.infn.ba.deep.qcg.client.utils.QcgException;
 
 public interface Qcg {
-	
-	
+		
   @RequestLine("GET /jobs  ")
   JobCollection getJobs();
 
@@ -50,5 +47,4 @@ public interface Qcg {
   @RequestLine("DELETE /jobs/{id}")
   void deleteJob(@Param("id") String id) throws QcgException;
 
-  
 }
