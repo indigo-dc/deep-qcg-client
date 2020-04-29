@@ -102,6 +102,8 @@ public class QcgTestUtils {
 		component.setMemory_per_node(4);
 		component.setMemory_per_core(8);
 		component.setConsumable("nothing");
+		component.set_native(new ArrayList<>());
+		component.get_native().add("--gres=gpu:1" );
 		resources.setComponents(Arrays.asList(new JobDescriptionResourcesComponent[]{component}));
 		resources.setWall_clock("01:00:00");
 		resources.setQueue("normal");

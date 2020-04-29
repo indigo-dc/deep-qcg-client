@@ -19,6 +19,9 @@ package it.infn.ba.deep.qcg.client.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -80,6 +83,8 @@ public class JobDescriptionResourcesComponent  implements Serializable {
 	 * schedule system parameters
 	 */
 	
+	@JsonProperty("native")
+	@SerializedName("native")
 	private List<String> _native;
 	
 	public JobDescriptionResourcesComponent() {

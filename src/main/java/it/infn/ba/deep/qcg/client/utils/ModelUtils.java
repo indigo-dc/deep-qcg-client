@@ -111,10 +111,10 @@ public class ModelUtils {
 			  serialized = mapper.writeValueAsString(src.getDescription());
 			  JobDescription description = mapper.readValue(serialized, JobDescription.class);
 			  dst.setDescription(description);
-		} catch (IOException e) {
-			throw new QcgException(
-					format("Error %s serializing %s.", e.getMessage(), src.getDescription().getClass()));
-		}		  
+		  } catch (IOException e) {
+			  throw new QcgException(
+				  format("Error %s serializing %s.", e.getMessage(), src.getDescription().getClass()));
+		  }		  
 	  } else {
 		  dst.setDescription(null);
 	  }
