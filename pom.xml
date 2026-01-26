@@ -35,7 +35,7 @@
 
 		<!-- Dependencies -->
 		<guava.version>23.2-jre</guava.version>
-		<assertj.version>3.8.0</assertj.version>
+		<assertj.version>3.27.7</assertj.version>
 		<java-uuid-generator.version>3.1.3</java-uuid-generator.version>
 		<junit-params.version>1.1.0</junit-params.version>
 	</properties>		
